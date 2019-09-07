@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: java-consumers
+
+topic: testtopic
+
+server:
+  port: ${port:0}
