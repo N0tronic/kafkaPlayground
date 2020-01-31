@@ -89,8 +89,9 @@ services:
   portainer:
     image: portainer/portainer
     restart: always
+    command: -H unix:///var/run/docker.sock --admin-password '$$2y$$05$$aj6Y0ALq8FQaHmbbeZAUfe0/O.HAV5lly.4m9hwoaCtVERdHbIiTC'
     ports:
-      - "9000:9000"
+      - 9000:9000
     command: -H unix:///var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -103,5 +104,5 @@ volumes:
 #    driver: local
 #  kafka3_data:
 #    driver: local
-  portainer_data:
-    driver: local
+#  portainer_data:
+#    driver: local
