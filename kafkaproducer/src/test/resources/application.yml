@@ -1,16 +1,8 @@
 spring:
-  kafka:
     producer:
+      bootstrap-servers: kafka1:9092,kafka2:9092,kafka3:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-    bootstrap-servers: kafka1:9092,kafka2:9092,kafka3:9092
-
-kafka:
-  topics:
-    -
-      name: personen
-      num-partitions: 3
-      replication-factor: 3
 
 server:
   port: ${port:8080}
